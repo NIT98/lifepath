@@ -3,17 +3,19 @@ from iolp import iseof
 from lexerlp import droptoken
 
 def parse(fp):
-    pass
+    lp(fp)
 
 def lp(fp):
     if iseof(fp):
         return
     
+    print("lp")
     stmt(fp)
     lp(fp)
 
 def stmt(fp):
     k = droptoken(fp)
+    print("stmt",k)
     
     if k == "PUSL":
         stmtn(fp)
@@ -35,7 +37,8 @@ def stmt(fp):
 # stmt with number after keyword
 def stmtn(fp) -> int:
     num = droptoken(fp)
-    if num.isnumeric():
+    print("stmtn",num)
+    if num and num.isnumeric():
         return num
     
     errpars("expected numeric token [%s]" % num)
