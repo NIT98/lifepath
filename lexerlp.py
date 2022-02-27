@@ -1,4 +1,5 @@
 from io import TextIOWrapper as FILE
+from errorlp import errlex
 
 from iolp import nextch, seekprv
 
@@ -20,7 +21,7 @@ def droptoken(fp : FILE) -> str:
     if c.isnumeric():
         return c
 
-    print("Lexical Error : near token '%s'" % c)
+    errlex("near token '%s'" % c)
     exit(1)
 
 def gettoken(fp : FILE):
