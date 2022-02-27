@@ -22,3 +22,4 @@ def droptoken(fp : FILE) -> str:
 
     print("Lexical Error : near token '%s'" % c)
     exit(1)
+
