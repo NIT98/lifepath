@@ -14,12 +14,12 @@ def droptoken(fp : FILE) -> str:
     if c == '':
         return None
     if c == '-':
-        #impliment comment functionality
+        comment(fp)
         return droptoken(c)
     if c.isalpha():
-        return c
+        return iden(fp)
     if c.isnumeric():
-        return c
+        return num(fp)
 
     errlex("near token '%s'" % c)
     exit(1)
