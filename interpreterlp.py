@@ -8,3 +8,11 @@ def interpreter( ast : AST.Node ):
         pass
     else:
         print("ast error: please entered root ast LP");
+
+def lp( ast : AST.Node ):
+    if isinstance(ast,AST.ASTLp1):
+        stmt(ast.stmt)
+        interpreter(ast.lp)
+
+def stmt(ast : AST.Node):
+    pass
