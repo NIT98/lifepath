@@ -72,3 +72,7 @@ class ASTStmtPer( ASTStmt ):
 class ASTStmtPrint( ASTStmt ):
     def __init__(self):
         super().__init__()
+
+class ASTStmtNumber():
+    def __init__(self,num):
+        self.num = int(num)
