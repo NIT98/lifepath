@@ -5,7 +5,7 @@ stk = StackLP(1024)
 
 def interpreter( ast : AST.Node ):
     if isinstance(ast,AST.ASTLp):
-        pass
+        lp(ast)
     else:
         print("ast error: please entered root ast LP");
 
