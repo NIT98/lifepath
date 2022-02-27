@@ -19,13 +19,13 @@ class Node( object ):
 
 class ASTLp( Node ):
     def __init__(self):
-        self.label = "lp"
         super().__init__()
+        self.label = "lp"
 
 class ASTStmt ( Node ):
     def __init__(self):
-        self.label = "stmt"
         super().__init__()
+        self.label = "stmt"
 
 class ASTStmtNum( Node ):
     def __init__(self,num):
@@ -38,29 +38,29 @@ class ASTLp0( ASTLp ):
 
 class ASTLp1( ASTLp ):
     def __init__(self,stmt:ASTStmt,lp:ASTLp):
+        super().__init__()
         self.stmt = stmt
         self.lp = lp
         self.addchild(stmt)
         self.addchild(lp)
-        super().__init__()
 
 class ASTStmtPush( ASTStmt ):
     def __init__(self,num : ASTStmtNum):
+        super().__init__()
         self.num = num
         self.addchild(num)
-        super().__init__()
 
 class ASTStmtLoad( ASTStmt ):
     def __init__(self,src : ASTStmtNum):
+        super().__init__()
         self.src = src
         self.addchild(src)
-        super().__init__()
 
 class ASTStmtStore( ASTStmt ):
     def __init__(self,src : ASTStmtNum):
+        super().__init__()
         self.src = src
         self.addchild(src)
-        super().__init__()
 
 class ASTStmtPlus( ASTStmt ):
     def __init__(self):
