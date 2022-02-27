@@ -39,7 +39,7 @@ def stmt(fp) -> AST.ASTStmt:
 # stmt with number after keyword
 def stmtn(fp) -> AST.ASTStmtNum:
     num = droptoken(fp)
-    print("stmtn",num)
+
     if num and num.isnumeric():
         return AST.ASTStmtNum(num)
     
