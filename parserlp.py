@@ -1,12 +1,12 @@
 from errorlp import errpars
 from iolp import iseof
-from lexerlp import droptoken
+from lexerlp import droptoken, gettoken
 
 def parse(fp):
     lp(fp)
 
 def lp(fp):
-    if iseof(fp):
+    if iseof(gettoken(fp)):
         return
     
     print("lp")
