@@ -1,5 +1,5 @@
 from iolp import iseof
-
+from lexerlp import droptoken
 
 def parse(fp):
     pass
@@ -12,8 +12,25 @@ def lp(fp):
     lp(fp)
 
 def stmt(fp):
-    pass
-
+    k = droptoken(fp)
+    
+    if k == "PUSL":
+        stmtn(fp)
+    elif k == "LD":
+        stmtn(fp)
+    elif k == "ST":
+        stmtn(fp)
+    elif k == "PLUS":
+        pass
+    elif k == "MIN":
+        pass
+    elif k == "MUL":
+        pass
+    elif k == "DIV":
+        pass    
+    elif k == "PER":
+        pass    
+    
 # stmt with number after keyword
 def stmtn(fp) -> int:
     pass
