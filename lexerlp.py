@@ -13,9 +13,12 @@ def droptoken(fp : FILE) -> str:
 
     if c == '':
         return None
+    if c.isspace():
+        wspace(fp)
+        return droptoken(fp)
     if c == '-':
         comment(fp)
-        return droptoken(c)
+        return droptoken(fp)
     if c.isalpha():
         return iden(fp)
     if c.isnumeric():
