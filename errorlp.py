@@ -4,3 +4,6 @@ def printerr(key : str, msg : str):
 
 def errlex(msg : str):
     printerr("Lexical Error",msg)
+
+def errpars(msg : str):
+    printerr("Parser Error",msg)
