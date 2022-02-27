@@ -34,7 +34,7 @@ Stack
     [7]
 ```
 
-Code [**Test Case 1**](hhttps://github.com/NIT98/lifepath/test/0)<br>
+Code [**Test Case 1**](https://github.com/NIT98/lifepath/test/1)<br>
 ```
     PUSH 2
     PUSH 3
