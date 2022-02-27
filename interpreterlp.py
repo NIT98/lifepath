@@ -43,3 +43,14 @@ def stmtprint():
 def stmtpush(ast : AST.ASTStmtPush):
     num = int(ast.num)
     stk.push(num)
+
+
+def stmtstore(ast : AST.ASTStmtStore):
+    src = int(ast.src)
+
+    if src < 0 or src > stk.curidx:
+        print("out of bounds source",src)
+        exit(1)
+
+    last = stk.pop()
+    stk.set(src,last)
