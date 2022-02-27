@@ -21,7 +21,7 @@ def stmt(fp) -> AST.ASTStmt:
         return AST.ASTStmtLoad(stmtn(fp))
     elif k == "ST":
         return AST.ASTStmtStore(stmtn(fp))
-    if k == "PRINT":
+    elif k == "PRINT":
         return AST.ASTStmtPrint(stmtn(fp))
     elif k == "PLUS":
         return AST.ASTStmtPlus()
