@@ -11,21 +11,41 @@ Description
     ST (src) : pop last item and set data to source index 
     LD (src) : get data in source index and push to last element
 ```
-Code & Stack
+
+Code [**Test Case 0**](http://markdown-here.com)<br>
 ```
-    PUSH 7  --[7]
-    PUSH 3  --[7, 3]
-    PUSH 8  --[7, 3, 8]
-    PLUS    --[7, 11]
-    LD   0  --[7, 11, 7]
-    LD   0  --[7, 11, 7, 7]
-    MUL     --[7, 11, 49]
-    ST   1  --[7, 49]
-    LD   1  --[7, 49, 49]
-    LD   2  --[7, 49, 49, 49]
-    LD   1  --[7, 49, 49, 49, 49]
-    PER     --[7, 49, 49, 0]
-    LD   0  --[7, 49, 49, 0, 7]
-    PLUS    --[7, 49, 49, 7]
-    PRINT   --7 (last of element)
+    PUSH 7
+    PUSH 3
+    PUSH 8
+    PLUS   
+    LD   0
+    MUL
+    PRINT
+```
+Stack 
+```
+    [7]
+    [7, 3]
+    [7, 3, 8]
+    [7, 11]
+    [7, 11, 7]
+    [7, 77]
+    77
+    [7]
+```
+
+Code [**Test Case 0**](http://markdown-here.com)<br>
+```
+    PUSH 2
+    PUSH 3
+    PLUS
+    PRINT
+```
+Stack
+```
+    [2]
+    [2, 3]
+    [5]
+    5
+    []
 ```
