@@ -59,3 +59,16 @@ def iden(fp : FILE):
         seekprv(fp)
 
     return t
+
+def num(fp : FILE):
+    c = nextch(fp)
+    t = ''
+
+    while c.isnumeric():
+        t += c
+        c = nextch(fp)
+    
+    if c != '':
+        seekprv(fp)
+
+    return t
