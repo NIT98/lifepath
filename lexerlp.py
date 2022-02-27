@@ -22,3 +22,10 @@ def droptoken(fp : FILE) -> str:
 
     print("Lexical Error : near token '%s'" % c)
     exit(1)
+
+def gettoken(fp : FILE):
+    pos =  fp.tell()
+    t = droptoken(fp)
+    fp.seek(pos, 0)
+    return t
+
