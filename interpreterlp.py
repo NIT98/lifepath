@@ -59,3 +59,25 @@ def stmtload(ast : AST.ASTStmtLoad):
     src = int(ast.src)
     num = stk.get(src)
     stk.push(num)
+
+
+
+def stmtplus():
+    nums = stk.popn(2)
+    stk.push(nums[0] + nums[1])
+
+def stmtmin():
+    nums = stk.popn(2)
+    stk.push(nums[0] - nums[1])
+
+def stmtmul():
+    nums = stk.popn(2)
+    stk.push(nums[0] * nums[1])
+
+def stmtdiv():
+    nums = stk.popn(2)
+    stk.push(nums[0] / nums[1])
+
+def stmtper():
+    nums = stk.popn(2)
+    stk.push(nums[0] % nums[1])
