@@ -38,3 +38,8 @@ def stmt(ast : AST.Node):
 def stmtprint():
     num = stk.pop()
     print(num)
+
+
+def stmtpush(ast : AST.ASTStmtPush):
+    num = int(ast.num)
+    stk.push(num)
