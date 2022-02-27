@@ -11,3 +11,12 @@ class StackLP:
 
         self.curidx += 1
         self.board[self.curidx] = int(num)
+
+    def pop(self):
+        if self.curidx < 0:
+            print("stack is empty!")
+            exit(1)
+
+        num = self.get(self.curidx)
+        self.curidx -= 1
+        return num
