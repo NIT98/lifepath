@@ -32,6 +32,8 @@ def stmt(fp):
     elif k == "PER":
         return AST.ASTStmtPer()
 
+    errpars("syntax error : expected keyword [%s]" % k)
+
 # stmt with number after keyword
 def stmtn(fp) -> int:
     num = droptoken(fp)
