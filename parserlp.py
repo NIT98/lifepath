@@ -1,38 +1,38 @@
 from errorlp import errpars
 from iolp import iseof
 from lexerlp import droptoken, gettoken
+import astlp as AST 
 
 def parse(fp):
     lp(fp)
 
 def lp(fp):
     if iseof(gettoken(fp)):
-        return
+        return AST.ASTLp0()
     
     print("lp")
-    stmt(fp)
-    lp(fp)
+
+    return AST.ASTLp1(stmt(fp),lp(fp))
 
 def stmt(fp):
     k = droptoken(fp)
-    print("stmt",k)
     
     if k == "PUSL":
-        stmtn(fp)
+        return AST.ASTStmtPush(stmtn(fp))
     elif k == "LD":
-        stmtn(fp)
+        return AST.ASTStmtLoad(stmtn(fp))
     elif k == "ST":
-        stmtn(fp)
+        return AST.ASTStmtStore(stmtn(fp))
     elif k == "PLUS":
-        pass
+        return AST.ASTStmtPlus()
     elif k == "MIN":
-        pass
+        return AST.ASTStmtMin()
     elif k == "MUL":
-        pass
+        return AST.ASTStmtMul()
     elif k == "DIV":
-        pass    
+        return AST.ASTStmtDiv()
     elif k == "PER":
-        pass    
+        return AST.ASTStmtPer()
 
 # stmt with number after keyword
 def stmtn(fp) -> int:
