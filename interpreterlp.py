@@ -34,19 +34,17 @@ def stmt(ast : AST.Node):
     if isinstance(ast,AST.ASTStmtPer):
         pass
 
-
 def stmtprint():
     num = stk.pop()
     print(num)
 
 
 def stmtpush(ast : AST.ASTStmtPush):
-    num = int(ast.num)
+    num = int(ast.num.getvalue("int"))
     stk.push(num)
 
-
 def stmtstore(ast : AST.ASTStmtStore):
-    src = int(ast.src)
+    src = ast.src.getvalue("int")
 
     if src < 0 or src > stk.curidx:
         print("out of bounds source",src)
@@ -56,11 +54,8 @@ def stmtstore(ast : AST.ASTStmtStore):
     stk.set(src,last)
 
 def stmtload(ast : AST.ASTStmtLoad):
-    src = int(ast.src)
-    num = stk.get(src)
+    num = stk.get(ast.src.getvalue("int"))
     stk.push(num)
-
-
 
 def stmtplus():
     nums = stk.popn(2)
