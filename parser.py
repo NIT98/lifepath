@@ -1,8 +1,15 @@
+from iolp import iseof
+
+
 def parse(fp):
     pass
 
 def lp(fp):
-    pass
+    if iseof(fp):
+        return
+    
+    stmt(fp)
+    lp(fp)
 
 def stmt(fp):
     pass
