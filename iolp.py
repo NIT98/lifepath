@@ -17,5 +17,5 @@ def seekprv(fp : FILE):
     fp.seek(tel,0)
     return tel
 
-def iseof(fp : FILE):
-    return curch(fp) == '\0'
+def iseof(c : str):
+    return c in [None,'','\0'] 
