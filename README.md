@@ -12,7 +12,7 @@ Description
     LD (src) : get data in source index and push to last element
 ```
 
-Code [**Test Case 0**](https://github.com/NIT98/lifepath/test/0)<br>
+Code [**Test Case 0**](https://github.com/NIT98/lifepath/blob/master/test/0)<br>
 ```
     PUSH 7
     PUSH 3
@@ -34,7 +34,7 @@ Stack
     [7]
 ```
 
-Code [**Test Case 1**](https://github.com/NIT98/lifepath/test/1)<br>
+Code [**Test Case 1**](https://github.com/NIT98/lifepath/blob/master/test/1)<br>
 ```
     PUSH 2
     PUSH 3
