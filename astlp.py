@@ -8,6 +8,11 @@ class Node( object ):
     def first(self):
         return self.children[0]
 
+    def setvalue(self,key : str, data : any):
+        self.value[key] = data
+
+    def getvalue(self,key : str):
+        return self.value.get(key)
 
 class ASTLp( Node ):
     def __init__(self):
@@ -19,11 +24,11 @@ class ASTStmt ( Node ):
         self.label = "stmt"
         super().__init__()
 
-
-class ASTStmtNum():
+class ASTStmtNum( Node ):
     def __init__(self,num):
-        self.num = int(num)
-
+        super().__init__()
+        self.setvalue("int",int(num))
+        
 class ASTLp0( ASTLp ):
     def __init__(self):
         super().__init__()
