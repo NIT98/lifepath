@@ -1,3 +1,4 @@
+from errorlp import errpars
 from iolp import iseof
 from lexerlp import droptoken
 
@@ -30,7 +31,12 @@ def stmt(fp):
         pass    
     elif k == "PER":
         pass    
-    
+
 # stmt with number after keyword
 def stmtn(fp) -> int:
-    pass
+    num = droptoken(fp)
+    if num.isnumeric():
+        return num
+    
+    errpars("expected numeric token [%s]" % num)
+    exit(1)
