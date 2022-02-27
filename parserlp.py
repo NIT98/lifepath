@@ -10,8 +10,6 @@ def lp(fp):
     if iseof(gettoken(fp)):
         return AST.ASTLp0()
     
-    print("lp")
-
     return AST.ASTLp1(stmt(fp),lp(fp))
 
 def stmt(fp):
@@ -39,7 +37,7 @@ def stmtn(fp) -> int:
     num = droptoken(fp)
     print("stmtn",num)
     if num and num.isnumeric():
-        return num
+        return AST.ASTStmtNum(num)
     
     errpars("expected numeric token [%s]" % num)
     exit(1)
