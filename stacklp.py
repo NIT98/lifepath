@@ -20,3 +20,20 @@ class StackLP:
         num = self.get(self.curidx)
         self.curidx -= 1
         return num
+
+    def set(self,idx:int,num):
+        self.board[idx] = int(num)
+
+    def get(self,idx:int):
+        return self.board[idx]
+
+    def popn(self,size):
+        nums = []
+        if self.curidx + 1 < size:
+            print("stack size not enouf size")
+            exit(1)
+
+        for _ in range(0,size):
+            nums.append(self.pop())
+        
+        return nums
