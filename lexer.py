@@ -1,8 +1,8 @@
 from io import TextIOWrapper
 
+fp : TextIOWrapper = None
 
-file : TextIOWrapper = None
-
-def init(file):
-    file = file
+def init(file : str):
+    fp = open(file)
+    print(fp)
 
