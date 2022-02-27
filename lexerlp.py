@@ -29,3 +29,11 @@ def gettoken(fp : FILE):
     fp.seek(pos, 0)
     return t
 
+def wspace(fp : FILE):
+    c = nextch(fp)
+
+    while c.isspace():
+        c = nextch(fp)
+
+    if c != '':
+        seekprv(fp)
