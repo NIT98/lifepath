@@ -9,4 +9,4 @@ def errpars(msg : str):
     printerr("Parser Error",msg)
 
 def errsem(msg : str):
-    printerr("Semantic Error",msg)
+    printerr("Parser Error",msg)
