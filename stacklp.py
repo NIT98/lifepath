@@ -37,3 +37,10 @@ class StackLP:
             nums.append(self.pop())
         
         return nums
+
+    def print(self):
+        sub = []
+        for i in range(0,self.curidx+1):
+           sub.append(self.board[i]) 
+        
+        print(sub)
