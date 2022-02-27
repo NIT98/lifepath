@@ -5,6 +5,9 @@ class Node( object ):
         self.value = dict()
         self.children = []
 
+    def addchild(self, child):
+        self.children.append(child)
+
     def first(self):
         return self.children[0]
 
@@ -37,26 +40,26 @@ class ASTLp1( ASTLp ):
     def __init__(self,stmt:ASTStmt,lp:ASTLp):
         self.stmt = stmt
         self.lp = lp
-        self.children = [stmt,lp]
+        self.addchild(stmt)
+        self.addchild(lp)
         super().__init__()
-
 
 class ASTStmtPush( ASTStmt ):
     def __init__(self,num : ASTStmtNum):
         self.num = num
-        self.children  = [num]
+        self.addchild(num)
         super().__init__()
 
 class ASTStmtLoad( ASTStmt ):
     def __init__(self,src : ASTStmtNum):
         self.src = src
-        self.children  = [src]
+        self.addchild(src)
         super().__init__()
 
 class ASTStmtStore( ASTStmt ):
     def __init__(self,src : ASTStmtNum):
         self.src = src
-        self.children  = [src]
+        self.addchild(src)
         super().__init__()
 
 class ASTStmtPlus( ASTStmt ):
