@@ -38,3 +38,12 @@ def wspace(fp : FILE):
 
     if c != '':
         seekprv(fp)
+
+def comment(fp : FILE):
+    nextch(fp)
+    if nextch(fp) != '-':
+        errlex("expected -")
+
+    while nextch(fp) != '\n':
+        pass
+ 
