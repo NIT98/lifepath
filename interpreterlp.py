@@ -15,4 +15,21 @@ def lp( ast : AST.Node ):
         interpreter(ast.lp)
 
 def stmt(ast : AST.Node):
-    pass
+    if isinstance(ast,AST.ASTStmtPrint):
+        pass
+    if isinstance(ast,AST.ASTStmtPush):
+        pass
+    if isinstance(ast,AST.ASTStmtLoad):
+        pass
+    if isinstance(ast,AST.ASTStmtStore):
+        pass
+    if isinstance(ast,AST.ASTStmtPlus):
+        pass
+    if isinstance(ast,AST.ASTStmtMin):
+        pass
+    if isinstance(ast,AST.ASTStmtMul):
+        pass
+    if isinstance(ast,AST.ASTStmtDiv):
+        pass
+    if isinstance(ast,AST.ASTStmtPer):
+        pass
