@@ -16,3 +16,6 @@ def seekprv(fp : FILE):
     tel = fp.tell() - 1
     fp.seek(tel,0)
     return tel
+
+def iseof(fp : FILE):
+    return curch(fp) == '\0'
