@@ -34,6 +34,8 @@ def stmt(ast : AST.Node):
     if isinstance(ast,AST.ASTStmtPer):
         stmtper()
 
+    stk.print()
+
 def stmtprint():
     num = stk.pop()
     print(num)
