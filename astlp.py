@@ -37,19 +37,19 @@ class ASTLp1( ASTLp ):
 
 
 class ASTStmtPush( ASTStmt ):
-    def __init__(self,num):
+    def __init__(self,num : ASTStmtNum):
         self.num = num
         self.children  = [num]
         super().__init__()
 
 class ASTStmtLoad( ASTStmt ):
-    def __init__(self,src):
+    def __init__(self,src : ASTStmtNum):
         self.src = src
         self.children  = [src]
         super().__init__()
 
 class ASTStmtStore( ASTStmt ):
-    def __init__(self,src):
+    def __init__(self,src : ASTStmtNum):
         self.src = src
         self.children  = [src]
         super().__init__()
