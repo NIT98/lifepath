@@ -15,12 +15,14 @@ def lp(fp) -> AST.ASTLp:
 def stmt(fp) -> AST.ASTStmt:
     k = droptoken(fp)
     
-    if k == "PUSL":
+    if k == "PUSH":
         return AST.ASTStmtPush(stmtn(fp))
     elif k == "LD":
         return AST.ASTStmtLoad(stmtn(fp))
     elif k == "ST":
         return AST.ASTStmtStore(stmtn(fp))
+    if k == "PRINT":
+        return AST.ASTStmtPrint(stmtn(fp))
     elif k == "PLUS":
         return AST.ASTStmtPlus()
     elif k == "MIN":
@@ -32,7 +34,7 @@ def stmt(fp) -> AST.ASTStmt:
     elif k == "PER":
         return AST.ASTStmtPer()
 
-    errpars("syntax error : expected keyword [%s]" % k)
+    errpars("expected keyword [%s]" % k)
 
 # stmt with number after keyword
 def stmtn(fp) -> AST.ASTStmtNum:
