@@ -46,4 +46,16 @@ def comment(fp : FILE):
 
     while nextch(fp) != '\n':
         pass
- 
+
+def iden(fp : FILE):
+    c = nextch(fp)
+    t = ''
+
+    while c.isalpha():
+        t += c
+        c = nextch(fp)
+    
+    if c != '':
+        seekprv(fp)
+
+    return t
