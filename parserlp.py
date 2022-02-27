@@ -3,16 +3,16 @@ from iolp import iseof
 from lexerlp import droptoken, gettoken
 import astlp as AST 
 
-def parse(fp):
-    lp(fp)
+def parse(fp) -> AST.ASTLp:
+    return lp(fp)
 
-def lp(fp):
+def lp(fp) -> AST.ASTLp:
     if iseof(gettoken(fp)):
         return AST.ASTLp0()
     
     return AST.ASTLp1(stmt(fp),lp(fp))
 
-def stmt(fp):
+def stmt(fp) -> AST.ASTStmt:
     k = droptoken(fp)
     
     if k == "PUSL":
@@ -35,7 +35,7 @@ def stmt(fp):
     errpars("syntax error : expected keyword [%s]" % k)
 
 # stmt with number after keyword
-def stmtn(fp) -> int:
+def stmtn(fp) -> AST.ASTStmtNum:
     num = droptoken(fp)
     print("stmtn",num)
     if num and num.isnumeric():
