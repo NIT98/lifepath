@@ -16,28 +16,27 @@ def lp( ast : AST.Node ):
 
 def stmt(ast : AST.Node):
     if isinstance(ast,AST.ASTStmtPrint):
-        pass
+        stmtprint()
     if isinstance(ast,AST.ASTStmtPush):
-        pass
+        stmtpush(ast)
     if isinstance(ast,AST.ASTStmtLoad):
-        pass
+        stmtload(ast)
     if isinstance(ast,AST.ASTStmtStore):
-        pass
+        stmtstore(ast)
     if isinstance(ast,AST.ASTStmtPlus):
-        pass
+        stmtplus()
     if isinstance(ast,AST.ASTStmtMin):
-        pass
+        stmtmin()
     if isinstance(ast,AST.ASTStmtMul):
-        pass
+        stmtmul()
     if isinstance(ast,AST.ASTStmtDiv):
-        pass
+        stmtdiv()
     if isinstance(ast,AST.ASTStmtPer):
-        pass
+        stmtper()
 
 def stmtprint():
     num = stk.pop()
     print(num)
-
 
 def stmtpush(ast : AST.ASTStmtPush):
     num = int(ast.num.getvalue("int"))
