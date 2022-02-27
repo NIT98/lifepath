@@ -54,3 +54,8 @@ def stmtstore(ast : AST.ASTStmtStore):
 
     last = stk.pop()
     stk.set(src,last)
+
+def stmtload(ast : AST.ASTStmtLoad):
+    src = int(ast.src)
+    num = stk.get(src)
+    stk.push(num)
